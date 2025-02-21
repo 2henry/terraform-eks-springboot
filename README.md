@@ -84,7 +84,9 @@ aws ecr create-repository --repository-name spring-boot-app
 
 docker tag spring-boot-app:latest <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/spring-boot-app:latest
 
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/spring-boot-app:latest
+aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com
+
+docker buildx build --platform linux/amd64,linux/arm64 -t <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/spring-boot-app:latest --push .
 ```
 ✅ ECR에 이미지를 업로드한 후, Kubernetes에서 이를 사용하여 배포할 수 있습니다.
 

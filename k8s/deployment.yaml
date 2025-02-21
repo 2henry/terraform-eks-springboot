@@ -29,7 +29,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: "eks.amazonaws.com/nodegroup"
+                  - key: "custom.nodegroup"
                     operator: In
                     values:
-                      - eks_nodes-20250220164556053400000001 
+                      - eks_nodes
