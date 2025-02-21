@@ -24,20 +24,25 @@
 ## **📂 폴더 구조**
 ```bash
 📦 terraform-eks-springboot
-├── terraform/               # Terraform 코드
-│   ├── main.tf              # Terraform Provider 설정
-│   ├── vpc.tf               # VPC 및 Subnet 설정
-│   ├── eks.tf               # EKS 클러스터 및 Node 그룹
-│   ├── variables.tf         # Terraform 변수 설정
-│   ├── outputs.tf           # Terraform 출력값 설정
-│   ├── provider.tf          # AWS Provider 설정
-├── k8s/                     # Kubernetes 리소스
-│   ├── deployment.yaml      # Spring Boot 애플리케이션 배포
-│   ├── service.yaml         # ALB를 이용한 서비스 설정
-├── app/                     # Spring Boot 애플리케이션 코드
-│   ├── Dockerfile           # Spring Boot Docker 이미지
-│   ├── src/main/...         # 애플리케이션 소스 코드
-├── README.md                # 프로젝트 문서
+├── README.md                      # 프로젝트 설명 및 사용법 문서
+├── app/                           # Spring Boot 애플리케이션 코드
+│   ├── Dockerfile                 # Docker 빌드 파일 (애플리케이션 컨테이너화)
+│   ├── pom.xml                    # Maven 빌드 및 의존성 설정 파일
+│   ├── src/                       # 애플리케이션 소스 코드 및 테스트 코드
+│   └── target/                    # Maven 빌드 결과물 (컴파일된 파일, JAR 파일 등)
+├── images/                        # 다이어그램 및 시각적 자료
+│   └── diagram.png                # 네트워크 아키텍처 다이어그램
+├── k8s/                           # Kubernetes 리소스 파일
+│   ├── deployment.yaml            # Spring Boot 애플리케이션 배포 설정
+│   └── service.yaml               # ALB를 통한 LoadBalancer 서비스 설정
+├── terraform/                     # Terraform 코드 (AWS 인프라 설정)
+    ├── eks.tf                     # EKS 클러스터 및 노드 그룹 설정 파일
+    ├── outputs.tf                 # Terraform 출력 변수 설정
+    ├── provider.tf                # AWS Provider 설정 파일
+    ├── terraform.tfstate          # Terraform 상태 파일 (현재 인프라 상태 기록)
+    ├── terraform.tfstate.backup   # Terraform 상태 파일의 백업
+    ├── variables.tf               # 변수 선언 및 기본값 설정
+    └── vpc.tf                     # VPC 및 네트워크 인프라 설정
 ```
 
 ---
