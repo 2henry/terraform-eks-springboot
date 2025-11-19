@@ -126,7 +126,9 @@ kubectl get svc
 Spring Boot 애플리케이션을 컨테이너로 패키징하여 AWS EKS에 배포하는 방법을 다룹니다.
 
 ✅ 완전 자동화된 AWS EKS + Spring Boot 배포 인프라 구축
+
 ✅ Private & Public Subnet을 활용한 네트워크 아키텍처 설계
+
 ✅ Terraform을 사용한 인프라 자동화 및 관리 용이
 
 기여 및 피드백 환영합니다! 😊
